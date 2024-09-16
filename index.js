@@ -105,7 +105,7 @@ function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions){
     if (CourseInfo.id !== AssignmentGroup.course_id){
         console.log("input was invalid");
        
-    }
+    } else
     for (let i = 0; i < AssignmentGroup.assignments.length; i++) {
         try {if (AssignmentGroup.assignments[i].points_possible === 0) {console.log("error")}}
         catch(err) {
@@ -115,10 +115,10 @@ function getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions){
         
     }
     for (let i = 0; i < AssignmentGroup.assignments.length; i++) {
-       if (AssignmentGroup.assignments[i].due_at > "2024-1-25")
- {     
+       if (AssignmentGroup.assignments[i].due_at < "2024-1-25") continue
+     
         console.log("This assignment not due yet.");
- }  
+  
   }
 
   // for (let i = 0; i < AssignmentGroup.assignments.length; i++) {
